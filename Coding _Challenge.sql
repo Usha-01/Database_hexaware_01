@@ -53,26 +53,18 @@ group by j.job_title;
 
 
 --q6
-create procedure get_jobs_in_salary_range @min_salary decimal(10,2), @max_salary decimal(10,2)
-as
-begin
-    select j.job_title, c.company_name, j.job_location, j.salary
-    from jobs j
-    join companies c on j.company_id = c.company_id
-    where j.salary between @min_salary and @max_salary;
-end;
+select distinct JobTitle
+from Jobs
+where Salary between 60000 and 80000;
 
 
 -- q7
-create procedure get_application_history @applicant_id int
-as
-begin
-    select j.job_title, c.company_name, a.application_date
-    from applications a
-    join jobs j on a.job_id = j.job_id
-    join companies c on j.company_id = c.company_id
-    where a.applicant_id = @applicant_id;
-end;
+
+select j.jobid, j.jobtitle, c.companyname
+from jobs j
+join companies c on j.companyid = c.companyid
+left join applications a on j.jobid = a.jobid
+where a.jobid is null;
 
 
 -- q8
@@ -168,14 +160,7 @@ full join jobs j on app.job_id = j.job_id;
 
 
 -- q20
-create procedure get_applicants_for_city @city varchar(255)
-as
-begin
-    select a.first_name, a.last_name, c.company_name
-    from applicants a
-    join applications app on a.applicant_id = app.applicant_id
-    join jobs j on app.job_id = j.job_id
-    join companies c on j.company_id = c.company_id
-    where c.location = @city and a.resume like '%2+ years experience%';
-end;
-go
+select a.FirstName, a.LastName, c.CompanyName
+from Applicants a, Companies c
+where c.City = 'Chennai' AND a.ExperienceYears > 2;
+
