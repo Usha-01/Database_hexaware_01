@@ -1,0 +1,5 @@
+INSERT_ENROLLMENT = "INSERT INTO Enrollment (EnrollmentID, StudentID, CourseID, EnrollmentDate) VALUES (?, ?, ?, ?)"
+GET_ENROLLMENT_BY_ID = "SELECT * FROM Enrollment WHERE EnrollmentID = ?"
+GET_ALL_ENROLLMENTS = "SELECT * FROM Enrollment"
+UPDATE_ENROLLMENT = "UPDATE Enrollment SET StudentID = ?, CourseID = ?, EnrollmentDate = ? WHERE EnrollmentID = ?"
+DELETE_ENROLLMENT = "DELETE FROM Enrollment WHERE EnrollmentID = ?"

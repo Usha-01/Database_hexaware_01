@@ -1,0 +1,5 @@
+INSERT_TEACHER = "INSERT INTO Teacher (TeacherID, Name, Email, Subject) VALUES (?, ?, ?, ?)"
+GET_TEACHER_BY_ID = "SELECT * FROM Teacher WHERE TeacherID = ?"
+GET_ALL_TEACHERS = "SELECT * FROM Teacher"
+UPDATE_TEACHER = "UPDATE Teacher SET Name = ?, Email = ?, Subject = ? WHERE TeacherID = ?"
+DELETE_TEACHER = "DELETE FROM Teacher WHERE TeacherID = ?"

@@ -1,0 +1,5 @@
+INSERT_PAYMENT = "INSERT INTO Payment (PaymentID, StudentID, Amount, PaymentDate) VALUES (?, ?, ?, ?)"
+GET_PAYMENT_BY_ID = "SELECT * FROM Payment WHERE PaymentID = ?"
+GET_ALL_PAYMENTS = "SELECT * FROM Payment"
+UPDATE_PAYMENT = "UPDATE Payment SET StudentID = ?, Amount = ?, PaymentDate = ? WHERE PaymentID = ?"
+DELETE_PAYMENT = "DELETE FROM Payment WHERE PaymentID = ?"

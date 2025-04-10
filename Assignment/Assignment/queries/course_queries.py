@@ -1,0 +1,5 @@
+INSERT_COURSE = "INSERT INTO Course (CourseID, CourseName, Credits) VALUES (?, ?, ?)"
+GET_COURSE_BY_ID = "SELECT * FROM Course WHERE CourseID = ?"
+GET_ALL_COURSES = "SELECT * FROM Course"
+UPDATE_COURSE = "UPDATE Course SET CourseName = ?, Credits = ? WHERE CourseID = ?"
+DELETE_COURSE = "DELETE FROM Course WHERE CourseID = ?"
